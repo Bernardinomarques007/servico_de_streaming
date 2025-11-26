@@ -7,7 +7,7 @@ from flask import render_template
 
 app = flask.Flask(__name__)
 
-DATABASE_URL = "postgresql://postgres:1234@localhost:5432/postgres"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 def stream_messages(channel):
     conn = psycopg2.connect(DATABASE_URL)
